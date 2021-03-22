@@ -10,17 +10,10 @@ html, body {
   background-color: #eadac6 ;
   /* disable user select for elements */
   user-select: none;
--webkit-user-select: none;
--moz-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
 }
-body a{
-  /* cursor: none; */
 
-}
-body input, body textarea{
-  /* cursor: none; */
-
-}
 ul{
   padding: 0;
   margin: 0;
@@ -34,35 +27,20 @@ a{
 }
 
 /* CURSOR */
-.circle-cursor {
-  /* position: fixed;
-  background-color:rgba(0, 0, 0, 0.712);
-  z-index: 10;
-  border: solid 1px rgba(0, 0, 0, 0.336);
-  width: 20px; 
-  height: 20px; 
-  border-radius: 50%;   */
-  /* FIXES THE PROBLEM ON HOVER OPACITY TRANSFORM */
-  /* pointer-events: none;
-  z-index: 999; */
-}
-
 .circle {
   background-color:rgba(0, 0, 0, 0.712);
   border: solid 1px rgba(0, 0, 0, 0.336);
   width: 20px; 
   height: 20px; 
   border-radius: 50%;  
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin: -20px 0 0 -20px;
-        pointer-events: none;
-        /* mix-blend-mode: multiply; */
-        z-index: 11;
-      }
-
-
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -20px 0 0 -20px;
+  pointer-events: none;
+  /* mix-blend-mode: multiply; */
+  z-index: 11;
+}
 
 .main-wrapper{
   overflow-x: hidden;
@@ -137,7 +115,6 @@ scrollbar-width: none;  /* Firefox */
 .amp-slide{
   opacity: 0.7;
   z-index: 5;
-  /* cursor: pointer; */
   animation: amplificador 1s linear infinite both;
 }
 @keyframes amplificador2 { 
@@ -291,7 +268,6 @@ strong:hover{
   z-index: 5;
   width: 30px;
   height: 30px;
-  /* cursor: pointer; */
   margin-top: 32px;
   /* TWO LINES MADE FROM A SQUARE */
   background: linear-gradient(to bottom, transparent 0%, transparent 20%, #2E313C 20%, #2E313C 23%, transparent 23%, transparent 48%, #2E313C 48%, #2E313C 50%, transparent 47%, transparent 76%, #2E313C 76%, #2E313C 78%, transparent 78%), linear-gradient(transparent, transparent);
@@ -342,14 +318,12 @@ padding-right: 30px;
 #decorationMusic{
   padding-top: 20px ;
   padding-bottom: 20px ;
-
   text-decoration-color: transparent;
 }
 #decorationBio{
   padding-top: 20px ;
   padding-bottom: 20px ;
 }
-
 
 /* ! SOCIAL MEDIA */
 .social-media{
@@ -369,8 +343,6 @@ padding-right: 30px;
   padding-left: 20px;
   opacity: 0.7;
 }
-/* COLOR ICONS  */
-/* a { color: inherit; }  */
 
 /* ! MAIN CONTENT */
 .main-content{
@@ -427,53 +399,43 @@ padding-right: 30px;
 #bigBox{
   grid-column: span 1;
   grid-row: span 2;
-  background-image: url('../media/album-flora.jpg');
+  background-image: url('../media/cover-headlights.jpg');
   background-size: cover;
   background-position: top ;
   background-repeat: no-repeat;
-
-  /* cursor: pointer; */
 }
 #topLeftBox{
   grid-column: span 1;
   grid-row: span 1;
-  background-image: url('../media/album-yellow-clean.jpg');
+  background-image: url('../media/cover-leave-clean.jpg');
   background-size: cover;
   background-position: bottom;
-  /* cursor: pointer; */
   background-repeat: no-repeat;
-
 }
 #topRightBox{
   grid-column: span 1;
   grid-row: span 1;
-  background-image: url('../media/album-flora2-clean.jpg');
+  background-image: url('../media/cover-healing-clean.jpg');
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-
-  /* cursor: pointer; */
 }
 
 #bottomLeftBox{
   grid-column: span 1;
   grid-row: span 1;
-  background-image: url('../media/album-flora-clean.jpg');
+  background-image: url('../media/cover-headlights-clean.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* cursor: pointer; */
 }
 #bottomRightBox{
   grid-column: span 1;
   grid-row: span 1;
-  background-image: url('../media/album-tree-clean.jpg');
+  background-image: url('../media/cover-shine-clean.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* cursor: pointer; */
 }
 /* BY DEFAULT THE PICS HAVE OPACITY BESIDES WHEN HOVERED */
 #topLeftBox,#bottomLeftBox, #topRightBox, #bottomRightBox{
@@ -501,7 +463,6 @@ padding-right: 30px;
 /* ? VIDEO SECTION */
 .video-gallery{
   margin: 4vw 0px 0px 8vw;
-  /* cursor: pointer; */
   position: absolute;
   transition: all 0s;
   z-index: 9;
@@ -516,7 +477,6 @@ padding-right: 30px;
 .video{
   z-index: 9;
   width: 100%;
-  /* cursor: pointer; */
   transition: all 0s;
 }
 /* VIDEO CONTROLS */
@@ -531,7 +491,6 @@ padding-right: 30px;
   color:yellow;
 }
 .stop{
-  /* cursor: pointer; */
   width: 12px;
   border-radius: 15%;
   height: 12px;
@@ -561,8 +520,7 @@ padding-right: 30px;
   margin-left: 92%;
 }
 .arrow{
-  padding: 10px;
-  /* cursor: pointer; */
+  padding-top: 10px;
   color:yellow;
   z-index: 8;
   font-size: 15px;
@@ -571,7 +529,6 @@ padding-right: 30px;
   background: none;
   border: 0;
   outline: 0;
-  /* cursor: pointer; */
 }
 .buttons{
   display: flex;
@@ -672,7 +629,6 @@ textarea{
   border-color: white;
   border: 3px solid yellow;
   text-transform: uppercase;
-  /* cursor: pointer; */
   color: rgb(0, 0, 0);
 }
 
@@ -681,7 +637,6 @@ textarea{
   .main-wrapper{
     margin-left: calc(-300px + 55px);
   }
-
   .gallery-albums{
     margin: 3vw 0 0 10vw;
     grid-template-columns: 440px 105px;
@@ -797,7 +752,6 @@ textarea{
   .circle {
     display: none;
   }
-
   .main-wrapper{
     margin-left: 0px;
     grid-template-columns: 1fr;  
@@ -925,7 +879,7 @@ textarea{
   .pic1-phone, .pic2-phone{
     margin: 0px;
     padding: 0px;
-  max-width: 40%;
+    max-width: 40%;
   }
 
   /* VIDEO SECTION */
@@ -963,8 +917,7 @@ textarea{
     font-size: 10px;
   }
 }
-@media only screen and (max-width: 380px) {
-
+@media only screen and (max-width: 380px){
   .main-wrapper{ 
     grid-template-columns: 1fr;  
     grid-template-rows: 180px 500px auto 100px;

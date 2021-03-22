@@ -16,15 +16,14 @@ var titlesAlbum = document.getElementById('titlesAlbum');
 // ?slidebar texts
 var textBio = document.getElementById('textBio');
 var textsContainerAlbum = document.getElementById('textsContainerAlbum');
-var textLong = document.getElementById('textLong');
-var textViolence = document.getElementById('textViolence');
+var textLeave2 = document.getElementById('textLeave2');
+var textShine = document.getElementById('textShine');
+var textLet = document.getElementById('textLet');
 var textContact = document.getElementById('textContact');
-var textContact2 = document.getElementById('textContact2');
-
 var textShenandoah = document.getElementById('textShenandoah');
-var textRocks = document.getElementById('textRocks');
+var textLeave = document.getElementById('textLeave');
+var textHeadlights = document.getElementById('textHeadlights');
 var textHealing = document.getElementById('textHealing');
-var textSignal = document.getElementById('textSignal');
 //? navbar
 var decorationVideo = document.getElementById('decorationVideo');
 var decorationBio = document.getElementById('decorationBio');
@@ -82,37 +81,18 @@ var screenXL = window.matchMedia("(min-width:1092px)");
 // ! ************ FUNCTIONS  ********
 
 // CURSOR CIRCLE INTERACTION
-// jQuery(document).ready(function(e) {
-//   var mouseX = 0, mouseY = 0;
-//   var xp = 0, yp = 0;
-//   $(document).mousemove(function(e){
-//     mouseX = e.pageX - 10;
-//     mouseY = e.pageY - 10; 
-//   });
-//   setInterval(function(){
-//     xp += ((mouseX - xp)/6);
-//     yp += ((mouseY - yp)/6);
-//     $("#circleCursor").css({
-//       left: xp +'px',
-//       top: yp +'px'});
-//   }, 1);
-// });
-
-     // create instance of kinet with custom settings
+// create instance of kinet with custom settings
 var kinet = new Kinet({
   acceleration: 0.06,
   friction: 0.20,
   names: ["x", "y"],
 });
-
 // select circle element
 var circle = document.getElementById('circle');
-
 // set handler on kinet tick event
 kinet.on('tick', function(instances) {
   circle.style.transform = `translate3d(${ (instances.x.current) }px, ${ (instances.y.current) }px, 0) rotateX(${ (instances.x.velocity/2) }deg) rotateY(${ (instances.y.velocity/2) }deg)`;
 });
-
 // call kinet animate method on mousemove
 document.addEventListener('mousemove', function (event) {
   kinet.animate('x', event.clientX - window.innerWidth/2);
@@ -511,7 +491,6 @@ function toggleSlide(){
     pushbackMedia();
   }
 }
-
 function display(status, item){
   switch(status){
     case 'none':
@@ -536,7 +515,6 @@ function pics(t1,t2,t3,t4){
   display(t3,titlePicsPhone);
   display(t4,titlePicVideo);
 }
-
 function setsGrid(xs,s,m,l,xsSlidebar,sSlidebar,xsAlign,sAlign){
   switch(true){
     case (screenXS.matches):
@@ -559,7 +537,6 @@ function setsGrid(xs,s,m,l,xsSlidebar,sSlidebar,xsAlign,sAlign){
       mainWrapper.style.gridTemplateRows = s;
       mainContent.style.alignItems = sAlign; 
       break;
-    
     case screenM.matches:
       mainContent.style.alignItems = 'center';
       mainWrapper.style.gridTemplateRows = m;
@@ -615,24 +592,22 @@ function togglePlayPause(){
   });
 }
 function displaysTexts(a,b,c,d,e,album,size,pos,song){
-  display(a,textLong);
-  display(b,textViolence);
-  display(c,textRocks);
-  display(d,textHealing);
-  display(e,textSignal);
-    // SETS THE RIGHT PIC AND POSITION ON THE BIG SQUARE
+  display(a,textLeave2);
+  display(b,textShine);
+  display(c,textLeave);
+  display(d,textHeadlights);
+  display(e,textHealing);
+  // SETS THE RIGHT PIC AND POSITION ON THE BIG SQUARE
   bigBox.style.background=`url('media/${album}-clean.jpg')`;
   bigBox.style.backgroundSize=size;
   bigBox.style.backgroundPosition=pos;
   audioAmpSlide.src =`media/${song}.mp3`;
   audioAmpPhone.src = `media/${song}.mp3`;
-
   resetsAmpAnimation(); 
   ampSlide.style.animation = "amplificador 1s linear infinite both";
   ampPhone.style.animation = "amplificador 1s linear infinite both";
 }
 function defaultMusicGallery(album){
-
   if(screenS.matches ){
     bigBox.style.backgroundPosition='center 26%';
   } else{
@@ -640,7 +615,6 @@ function defaultMusicGallery(album){
   } 
   displaysTexts('none','none','none','block','none',album,'cover','center 26%','Headlights');
 }
-
 function navUnderline(elmOn,elm1,elm2,elm3){
   display('yellow',elmOn);
   display('transparent',elm1);
@@ -654,8 +628,6 @@ function displaySection(status,elmOn,elm1,elm2,elm3,elm4,elm5){
   display('none',elm3);
   display('none',elm4);
   display('none',elm5);
-
-
 }
 function displayMedia(status,elmOn,elm1,elm2,elm3,elm4){
   display(status,elmOn);
@@ -668,11 +640,10 @@ function displaySlideTitle(elmOn,elm1){
   display('flex',elmOn);
   display('none',elm1);
 }
-
 function clickHome(){
   navUnderline(decorationBio,decorationContact,decorationMusic,decorationVideo);
   // displaySlideTexts
-  displaySection('block',textBio,textsContainerAlbum,textContact,textContact2,textLong,textShenandoah);
+  displaySection('block',textBio,textsContainerAlbum,textLet,textContact,textLeave2,textShenandoah);
   // displayMedia
   if(screenXS.matches || screenS.matches || screenM.matches){
     displayMedia('flex',bioPicContainerSmall,bioPicContainerBig,galleryAlbums,videoGallery,contactSection);
@@ -703,7 +674,7 @@ function clickHome(){
 function clickMusic(){
   navUnderline(decorationMusic,decorationContact,decorationBio,decorationVideo);
   // displaySlideTexts
-  displaySection('block',textsContainerAlbum,textBio,textContact,textContact2,textLong,textShenandoah);
+  displaySection('block',textsContainerAlbum,textBio,textLet,textContact,textLeave2,textShenandoah);
   // displayMedia
   displayMedia('grid',galleryAlbums,bioPicContainerSmall,bioPicContainerBig,videoGallery,contactSection);
   // displayIlustrations
@@ -727,7 +698,7 @@ function clickMusic(){
     '90px minmax(550px, calc(100vh - 90px))',
     '90px minmax(550px, calc(100vh - 90px))',
     'auto', 'auto','flex-start','flex-start');
-  defaultMusicGallery('album-flora');
+  defaultMusicGallery('cover-headlights');
   pauseAudio(audioStone);
   stoneAnimation('none');
   toggleStopButton();
@@ -736,7 +707,7 @@ function clickMusic(){
 function clickVideo(){
   navUnderline(decorationVideo,decorationMusic,decorationContact,decorationBio);
   // displaySlideTexts
-  displaySection('block',textLong,textsContainerAlbum,textBio,textContact,textContact2,textShenandoah);
+  displaySection('block',textLeave2,textsContainerAlbum,textBio,textLet,textContact,textShenandoah);
   // displayMedia
   displayMedia('grid',videoGallery,galleryAlbums,bioPicContainerSmall,bioPicContainerBig,contactSection);
   // displayIlustrations
@@ -770,13 +741,12 @@ function clickVideo(){
 
 }
 function clickContact(){ 
-  console.log(567);
   navUnderline(decorationContact,decorationVideo,decorationMusic,decorationBio);
   // displaySlideTexts
   if(screenS.matches || screenXS.matches){
-    displaySection('none',textContact2,textContact,textLong,textsContainerAlbum,textBio,textShenandoah);  
+    displaySection('none',textContact,textLet,textLeave2,textsContainerAlbum,textBio,textShenandoah);  
   }else{
-    displaySection('block',textContact2,textContact,textLong,textsContainerAlbum,textBio,textShenandoah);
+    displaySection('block',textContact,textLet,textLeave2,textsContainerAlbum,textBio,textShenandoah);
   }
   // displayMedia
   displayMedia('block',contactSection,videoGallery,galleryAlbums,bioPicContainerSmall,bioPicContainerBig);
@@ -880,8 +850,6 @@ plate.addEventListener('click', function(){
   }
 });
 iconArrowRight.addEventListener('click', function(){
-  // video.poster = 'media/video-flora.mp4';
-
   csources = [
     'media/video-flora.mp4',
     'media/video-let.mp4',
@@ -893,8 +861,8 @@ iconArrowRight.addEventListener('click', function(){
     'media/imgVideo4.jpg'
   ];
   textsVideos = [
-    textLong,
-    textContact,
+    textLeave2,
+    textLet,
     textShenandoah
   ];
 
@@ -912,16 +880,14 @@ iconArrowRight.addEventListener('click', function(){
   video.poster = posters[p ++];
   video.style.transition ='all 1.5s ease';
 
+  display('none',textLet);
   display('none',textContact);
-  display('none',textContact2);
-
   display('none',textShenandoah);
-  display('none',textLong);
+  display('none',textLeave2);
   display('block',textsVideos[texts ++]);
   resetsPlateAnimation();
   checkScrollHeight();
   togglePlayPause2();
-
 });
 video.onclick = function(){
   togglePlayPause();
@@ -1014,13 +980,11 @@ var circleCursor = document.getElementById('circle');
 galleryAlbums.addEventListener("mouseover", function() {
   circleCursor.style.backgroundColor = "yellow";
   circleCursor.style.borderColor = "yellow";
-
 });
 
 galleryAlbums.addEventListener("mouseout", function() {
   circleCursor.style.backgroundColor = "rgba(0, 0, 0, 0.712)";
   circleCursor.style.borderColor = "rgba(0, 0, 0, 0.712)";
-
 });
 videoGallery.addEventListener("mouseover", function() {
   circleCursor.style.backgroundColor = "yellow";
